@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF4EC"
+    android:elevation="8dp"
+    tools:context=".ui.dashboard.ProfilFragment" >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="351dp"
+        android:layout_height="475dp"
+        android:layout_row="0"
+        android:layout_rowweight="1"
+        android:layout_column="0"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="#C0D5E5"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.686">
+
+        <ImageView
+            android:id="@+id/ivprofil"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="95dp"
+            android:src="@drawable/vprofil" />
+
+        <TextView
+            android:id="@+id/tvnamaprofil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="90dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Nama"
+            android:textAllCaps="false"
+            android:textColor="#506D84"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvnamauser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="110dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Nama lengkap user"
+            android:textAllCaps="false"
+            android:textColor="#506D84"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/ivcalendar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="170dp"
+            android:src="@drawable/vcalendar" />
+
+        <TextView
+            android:id="@+id/tvtgl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="170dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Tanggal Lahir"
+            android:textAllCaps="false"
+            android:textColor="#506D84"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvtgluser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="190dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Bulan, tanggal tahun"
+            android:textAllCaps="false"
+            android:textColor="#506D84"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/ivgender"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="250dp"
+            android:src="@drawable/vgender" />
+
+        <TextView
+            android:id="@+id/tvgender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="250dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Jenis Kelamin"
+            android:textAllCaps="false"
+            android:textColor="#506D84"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvgenderuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="270dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Female/Male"
+            android:textAllCaps="false"
+            android:textColor="#506D84"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/ivloc"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="330dp"
+            android:src="@drawable/vloc" />
+
+        <TextView
+            android:id="@+id/tvloc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="330dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Alamat"
+            android:textAllCaps="false"
+            android:textColor="#506D84"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvlocuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="350dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Jl Veteran, Malang"
+            android:textAllCaps="false"
+            android:textColor="#506D84"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btndetail"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="410dp"
+            android:background="@drawable/rounderbtn"
+            android:fontFamily="@font/montserrat"
+            android:text="Update Profil"
+            android:textAllCaps="false"
+            android:textColor="#7B90A1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.83"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.234" />
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/arrowback"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/btnback"
+        android:paddingLeft="10sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.120"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.032"
+        tools:ignore="SpeakableTextPresentCheck"></Button>
+
+    <TextView
+        android:id="@+id/tvprofil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Profil"
+        android:textAllCaps="false"
+        android:textColor="#506D84"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.035" />
+
+    <ImageView
+        android:id="@+id/imgprofil"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:elevation="8dp"
+        android:src="@mipmap/profilimg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.168" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

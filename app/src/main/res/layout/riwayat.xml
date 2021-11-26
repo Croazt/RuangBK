@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF4EC">
+
+    <Button
+        android:id="@+id/arrowback"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/btnback"
+        android:paddingLeft="10sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.120"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.032"
+        tools:ignore="SpeakableTextPresentCheck"></Button>
+
+    <TextView
+        android:id="@+id/pageTitle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Riwayat"
+        android:textAllCaps="false"
+        android:textColor="#506D84"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.351"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.035" />
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="322dp"
+        android:layout_height="52dp"
+        android:background="@drawable/search_rounded_corner"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.134" />
+
+    <Button
+        android:id="@+id/btnberjalan"
+        android:layout_width="146dp"
+        android:layout_height="43dp"
+        android:background="@drawable/homebtn"
+        android:fontFamily="@font/montserrat"
+        android:text="Sedang Berjalan"
+        android:textColor="#7B90A1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.234" />
+
+    <Button
+        android:id="@+id/btnselesai"
+        android:layout_width="146dp"
+        android:layout_height="43dp"
+        android:background="@drawable/homebtn"
+        android:fontFamily="@font/montserrat"
+        android:text="Selesai"
+        android:textColor="#7B90A1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.234" />
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="517dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardriwayat"
+                android:layout_width="351dp"
+                android:layout_height="150dp"
+                android:layout_row="0"
+                android:layout_rowweight="1"
+                android:layout_column="0"
+                android:layout_margin="8dp"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#C0D5E5"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp">
+
+                <TextView
+                    android:id="@+id/hari"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="23dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Hari, tanggal bulan tahun"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/waktu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="48dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="hh:mm - hh:mm"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/guru"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="68dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Pak/bu nama"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="#506D84"
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:id="@+id/topik"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="98dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Topik Konsultasi"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btndetail"
+                    android:layout_width="103dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="230dp"
+                    android:layout_marginTop="70dp"
+                    android:background="@drawable/rounderbtn"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Detail"
+                    android:textAllCaps="false"
+                    android:textColor="#7B90A1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.83"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.234" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

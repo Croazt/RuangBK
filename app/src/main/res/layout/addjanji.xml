@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF4EC">
+
+    <Button
+        android:id="@+id/arrowback"
+        android:layout_width="41dp"
+        android:layout_height="36dp"
+        android:background="@drawable/btnback"
+        android:paddingLeft="10sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.051"></Button>
+
+    <TextView
+        android:id="@+id/pageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Buat Janji"
+        android:textAllCaps="true"
+        android:textColor="#506D84"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="351dp"
+        android:layout_height="575dp"
+        android:layout_row="0"
+        android:layout_rowweight="1"
+        android:layout_column="0"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="#C0D5E5"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.634">
+
+        <TextView
+            android:id="@+id/cardTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Form Pembuatan Janji"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#506D84"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="307dp"
+            android:layout_height="88dp"
+            android:layout_row="0"
+            android:layout_rowweight="1"
+            android:layout_column="0"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/search_rounded_corner"
+            android:paddingTop="75dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
+
+            <TextView
+                android:id="@+id/tvnama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:paddingLeft="20dp"
+                android:paddingTop="8dp"
+                android:text="Nama Lengkap"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etnama"
+                android:layout_width="263dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:ems="10"
+                android:fontFamily="@font/montserrat"
+                android:inputType="textPersonName"
+                android:paddingLeft="50dp"
+                android:paddingTop="40dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="307dp"
+            android:layout_height="85dp"
+            android:layout_row="0"
+            android:layout_rowweight="1"
+            android:layout_column="0"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="210dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/search_rounded_corner"
+            android:paddingTop="75dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
+
+            <TextView
+                android:id="@+id/tvkelas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:paddingLeft="20dp"
+                android:paddingTop="8dp"
+                android:text="Kelas"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etkelas"
+                android:layout_width="263dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:ems="10"
+                android:fontFamily="@font/montserrat"
+                android:inputType="textPersonName"
+                android:paddingLeft="50dp"
+                android:paddingTop="40dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="307dp"
+            android:layout_height="159dp"
+            android:layout_row="0"
+            android:layout_rowweight="1"
+            android:layout_column="0"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="330dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/search_rounded_corner"
+            android:paddingTop="75dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
+
+            <TextView
+                android:id="@+id/tvtopik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:paddingLeft="20dp"
+                android:paddingTop="8dp"
+                android:text="Topik"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="161dp"
+                android:paddingLeft="20dp"
+                android:paddingTop="45dp">
+
+                <RadioButton
+                    android:id="@+id/rbtnakademik"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Akademik" />
+
+                <RadioButton
+                    android:id="@+id/rbtnkonsultasi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Konsultasi" />
+
+                <RadioButton
+                    android:id="@+id/rbtnisu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Isu Personal" />
+
+            </RadioGroup>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btndetail"
+            android:layout_width="103dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="510dp"
+            android:background="@drawable/rounderbtn"
+            android:fontFamily="@font/montserrat"
+            android:text="Konfirmasi"
+            android:textAllCaps="false"
+            android:textColor="#7B90A1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.83"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.234" />
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
