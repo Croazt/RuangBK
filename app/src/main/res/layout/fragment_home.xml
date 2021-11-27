@@ -13,7 +13,7 @@
         android:layout_height="150dp"
         android:layout_marginStart="45dp"
         android:background="@drawable/btnaddjanji"
-        android:drawableTop="@drawable/vaddjanji"
+        android:drawableTop="@drawable/vtambahjanji"
         android:paddingTop="40dp"
         android:textColor="#000"
         android:textStyle="bold"
