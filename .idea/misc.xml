@@ -3,45 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable-v24/rounderbtn.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/addbtnimg.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/bluebg.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/botnav_home.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/botnav_logout.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/botnav_profil.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/botnav_rounded_corner.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/btnaddjanji.xml" value="0.1" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/btnback.xml" value="0.1537037037037037" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/homebtn.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/ic_baseline_check_circle_24.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/ic_baseline_post_add_24.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/ic_image_10.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/imgaddjanji_background.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/ivaddcalendar_background.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/search_rounded_corner.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/vcalendar.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/vgender.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/vhistory.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/vloc.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/drawable/vprofil.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/layout/activity_main.xml" value="0.33489461358313816" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/layout/addjanji.xml" value="0.37666666666666665" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/layout/detail.xml" value="0.264" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/layout/fragment_dashboard.xml" value="0.4" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/layout/fragment_home.xml" value="0.4" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/layout/janjiberhasil.xml" value="0.4" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/layout/riwayat.xml" value="0.3" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/menu/bottom_nav_menu.xml" value="0.264" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/mipmap-anydpi-v26/imgaddjanji_round.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/proyekakhirPSI/app/src/main/res/mipmap-anydpi-v26/ivaddcalendar.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RuangBK/app/src/main/res/drawable/btnbg.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RuangBK/app/src/main/res/drawable/ic_rectangle_22.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RuangBK/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RuangBK/app/src/main/res/layout/login.xml" value="0.25" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RuangBK/app/src/main/res/layout/onboarding1.xml" value="0.3625" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RuangBK/app/src/main/res/layout/onboarding2.xml" value="0.3625" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RuangBK/app/src/main/res/layout/onboarding3.xml" value="0.33" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RuangBK/app/src/main/res/layout/register.xml" value="0.22" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RuangBK/app/src/main/res/layout/splashscreen.xml" value="0.3625" />
       </map>
     </option>
   </component>
