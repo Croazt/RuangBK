@@ -9,12 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.proyekakhirpsi.R
-import com.example.proyekakhirpsi.databinding.FragmentDashboardBinding
+import com.example.proyekakhirpsi.databinding.FragmentHomeBinding
+import com.example.proyekakhirpsi.databinding.FragmentProfilBinding
 
 class ProfilFragment : Fragment() {
 
     private lateinit var dashboardViewModel: DashboardViewModel
-    private var _binding: FragmentDashboardBinding? = null
+    private var _binding: FragmentProfilBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -28,10 +29,10 @@ class ProfilFragment : Fragment() {
         dashboardViewModel =
             ViewModelProvider(this).get(DashboardViewModel::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentProfilBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
+        val textView: TextView = binding.tvtgl
         dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
