@@ -5,6 +5,7 @@ package com.example.proyekakhirpsi
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,20 +17,23 @@ import com.example.proyekakhirpsi.models.JanjiList
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
+import kotlinx.android.synthetic.main.riwayat.*
+import kotlin.math.log
+
 abstract class BaseSearchActivity : AppCompatActivity() {
     lateinit var storeManager : StoreManager
 
     private lateinit var janjiAdapter : JanjiAdapter
     private val compositeDisposable = CompositeDisposable()
-    lateinit var list : RecyclerView
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         storeManager = StoreManager(applicationContext)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.riwayat)
 
-        janjiAdapter = JanjiAdapter(emptyList())
-        list = findViewById(R.id.list)
+        janjiAdapter = JanjiAdapter(emptyList(),this)
         list.layoutManager = LinearLayoutManager(this)
         list.adapter = janjiAdapter
 
@@ -44,7 +48,7 @@ abstract class BaseSearchActivity : AppCompatActivity() {
 
 
     private fun displayData(janji : List<JanjiList>){
-        list.adapter = JanjiAdapter(janji)
+        list.adapter = JanjiAdapter(janji, this)
     }
 
     protected fun fetchData(){
@@ -68,8 +72,11 @@ abstract class BaseSearchActivity : AppCompatActivity() {
     protected fun fetchData(type:String, berjalan : String , query : String){
         var apiCon= Api().getRetrofit().create(ApiService::class.java)
         var tes = apiCon.fetchJanjiTopic("*", "eq."+storeManager.email, "like.%$query%")
-        if(type == "berjalan"){
+        if(type == "berjalan" && query.isNotEmpty()){
             tes = apiCon.fetchJanjiBerjalan("*", "eq."+storeManager.email,"eq.$query", "eq.$berjalan")
+        }
+        if(type == "berjalan" && query.isEmpty()){
+            tes = apiCon.fetchJanjiBerjalan("*", "eq."+storeManager.email, "like.%$query%", "eq.$berjalan")
         }
         compositeDisposable.add(tes
             .subscribeOn(Schedulers.io())
@@ -87,4 +94,5 @@ abstract class BaseSearchActivity : AppCompatActivity() {
 
         )
     }
+
 }

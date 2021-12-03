@@ -2,8 +2,9 @@ package com.example.proyekakhirpsi.models
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import retrofit2.http.GET
+import java.io.Serializable
 
-data class JanjiList (
+data class JanjiList  (
     @SerializedName("id")
     @Expose
     val id : Int,
@@ -31,4 +32,4 @@ data class JanjiList (
     @SerializedName("isDone")
     @Expose
     val berjalan : String
-)
+): Serializable

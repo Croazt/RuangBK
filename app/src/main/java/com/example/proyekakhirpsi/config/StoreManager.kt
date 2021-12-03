@@ -18,7 +18,10 @@ class StoreManager(private val _context: Context) {
         Log.d("RuangBK", "image set")
         editor.commit()
     }
-
+    fun setEmail(email :String){
+        editor.putString("Email", email)
+        editor.commit()
+    }
     val email: String?
         get() = pref.getString("Email", "")
 

@@ -16,6 +16,8 @@ import com.example.proyekakhirpsi.config.StoreManager
 import com.example.proyekakhirpsi.connect.Api
 import com.example.proyekakhirpsi.models.ApiService
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.addjanji.*
+import kotlinx.android.synthetic.main.janjiberhasil.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -56,23 +58,18 @@ class TambahJanjiActivity : AppCompatActivity() {
         if (storeManager.email != null && storeManager.email!!.isNotEmpty()) {
             setContentView(R.layout.addjanji)
 
-            val back = findViewById<Button>(R.id.arrowback)
-            back.setOnClickListener{
+            arrowback.setOnClickListener{
                 this.finish()
             }
 
-            val namaLayout = findViewById<EditText>(R.id.etnama)
-            val kelasLayout = findViewById<EditText>(R.id.etkelas)
-            val topicLayout = findViewById<RadioGroup>(R.id.kelasradio)
-            val signInButton = findViewById<Button>(R.id.btndetail)
 
-            namaLayout?.doOnTextChanged { text, _, _, _ ->
+            etnama?.doOnTextChanged { text, _, _, _ ->
                 namaLiveData.value = text?.toString()
             }
-            kelasLayout?.doOnTextChanged { text, _, _, _ ->
+            etkelas?.doOnTextChanged { text, _, _, _ ->
                 kelasLiveData.value = text?.toString()
             }
-            topicLayout.setOnCheckedChangeListener(
+            kelasradio.setOnCheckedChangeListener(
                 RadioGroup.OnCheckedChangeListener{group, checkedId ->
                     val radio : RadioButton = findViewById(checkedId)
                     topicLiveData.value = radio.text?.toString()
@@ -80,11 +77,11 @@ class TambahJanjiActivity : AppCompatActivity() {
             )
 
             isValidLiveData.observe(this) { isValid ->
-                signInButton.isEnabled = isValid
+                btndetail.isEnabled = isValid
             }
 
-            val root = findViewById<View>(android.R.id.content).getRootView()
-            signInButton.setOnClickListener {
+            val root = findViewById<View>(android.R.id.content).rootView
+            btndetail.setOnClickListener {
                 val apiSet = Api().getRetrofit()
                 val api = apiSet.create(ApiService::class.java)
                 api.createJanji(topicLiveData.value+"", namaLiveData.value+"", kelasLiveData.value+"").enqueue(object :
@@ -105,8 +102,7 @@ class TambahJanjiActivity : AppCompatActivity() {
                             mdIalog.setContentView(layout)
 
                             mdIalog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-                            val butt = mdIalog.findViewById<Button>(R.id.button2)
-                            butt.setOnClickListener{
+                            button2.setOnClickListener{
                                 this@TambahJanjiActivity.finish()
                                 mdIalog.dismiss()
                             }

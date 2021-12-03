@@ -21,6 +21,7 @@ import com.example.proyekakhirpsi.connect.Api
 import com.example.proyekakhirpsi.models.ApiService
 import com.example.proyekakhirpsi.models.UserList
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.login.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -55,35 +56,29 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
 
-        val signInButton = findViewById<Button>(R.id.button)
-
-        email = findViewById<EditText>(R.id.editTextTextEmailAddress)
-        pass = findViewById<EditText>(R.id.editTextTextPassword)
-
         sharedPreference = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
 
-        email?.doOnTextChanged { text, _, _, _ ->
+        editTextTextEmailAddress?.doOnTextChanged { text, _, _, _ ->
             emailLiveData.value = text?.toString()
         }
-        pass?.doOnTextChanged { text, _, _, _ ->
+        editTextTextPassword?.doOnTextChanged { text, _, _, _ ->
             passwordLiveData.value = text?.toString()
         }
 
         isValidLiveData.observe(this) { isValid ->
-            signInButton.isEnabled = isValid
+            button.isEnabled = isValid
             if (!isValid) {
-                signInButton.setBackgroundColor(Color.parseColor("#FCECE2"))
+                button.setBackgroundColor(Color.parseColor("#FCECE2"))
             } else {
-                signInButton.setBackgroundColor(Color.parseColor("#506D84"))
+                button.setBackgroundColor(Color.parseColor("#506D84"))
             }
         }
 
-        val loginText = findViewById<TextView>(R.id.textView6)
-        loginText.setOnClickListener{
+        textView6.setOnClickListener{
             startActivity(Intent(applicationContext, RegisterActivity::class.java ))
         }
-//        val root = findViewById<View>(android.R.id.content).getRootView()
-        signInButton.setOnClickListener(){
+
+        button.setOnClickListener(){
             val apiSet = Api().getRetrofit()
             val api = apiSet.create(ApiService::class.java)
             api.fetchUserLogin("*","eq."+emailLiveData.value+"","eq."+passwordLiveData.value+"").enqueue(object : Callback<List<UserList>> {
@@ -94,7 +89,7 @@ class LoginActivity : AppCompatActivity() {
 //                    val storeManager = StoreManager(applicationContext);
                     Log.d("fachry", "body: ${response.body()}")
                     if(response.code()!=200 || response.body()!!.isEmpty()){
-                        val snackbar = Snackbar.make(findViewById<View>(android.R.id.content).getRootView(), "User Not Found",Snackbar.LENGTH_LONG).setAction("Action",null)
+                        val snackbar = Snackbar.make(findViewById<View>(android.R.id.content).rootView, "User Not Found",Snackbar.LENGTH_LONG).setAction("Action",null)
                         snackbar.setActionTextColor(Color.BLUE)
                         val snackbarView = snackbar.view
                         snackbarView.setBackgroundColor(Color.LTGRAY)

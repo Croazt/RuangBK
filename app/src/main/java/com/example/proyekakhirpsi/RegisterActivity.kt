@@ -20,6 +20,7 @@ import com.example.proyekakhirpsi.config.StoreManager
 import com.example.proyekakhirpsi.connect.Api
 import com.example.proyekakhirpsi.models.ApiService
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.register.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -65,40 +66,35 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register)
 
-         email = findViewById<EditText>(R.id.editTextTextEmailAddress)
-         pass = findViewById<EditText>(R.id.editTextTextPassword)
-         conf = findViewById<EditText>(R.id.editTextTextPassword2)
-        val signInButton = findViewById<Button>(R.id.registerbutt)
 
         sharedPreference = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
 
-        email?.doOnTextChanged { text, _, _, _ ->
+        editTextTextEmailAddress?.doOnTextChanged { text, _, _, _ ->
             emailLiveData.value = text?.toString()
         }
-        pass?.doOnTextChanged { text, _, _, _ ->
+        editTextTextPassword?.doOnTextChanged { text, _, _, _ ->
             passwordLiveData.value = text?.toString()
         }
-        conf?.doOnTextChanged { text, _, _, _ ->
+        editTextTextPassword2?.doOnTextChanged { text, _, _, _ ->
             passwordConfirmLiveData.value = text?.toString()
         }
 
         isValidLiveData.observe(this) { isValid ->
-            signInButton.isEnabled = isValid
+            registerbutt.isEnabled = isValid
             if (!isValid) {
-                signInButton.setBackgroundColor(Color.parseColor("#FCECE2"))
+                registerbutt.setBackgroundColor(Color.parseColor("#FCECE2"))
             } else {
-                signInButton.setBackgroundColor(Color.parseColor("#506D84"))
+                registerbutt.setBackgroundColor(Color.parseColor("#506D84"))
             }
         }
 
-        val loginText = findViewById<TextView>(R.id.textView6)
-        loginText.setOnClickListener{
+        textView6.setOnClickListener{
             startActivity(Intent(applicationContext, LoginActivity::class.java ))
             this.finish()
         }
 
-        val root = findViewById<View>(android.R.id.content).getRootView()
-        signInButton.setOnClickListener(){
+        val root = findViewById<View>(android.R.id.content).rootView
+        registerbutt.setOnClickListener(){
             val apiSet = Api().getRetrofit()
             val api = apiSet.create(ApiService::class.java)
             api.createUser(emailLiveData.value+"",passwordLiveData.value+"").enqueue(object : Callback<Void> {
