@@ -9,8 +9,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class Api {
     fun getRetrofit() : Retrofit{
-        val token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjM4MjAzMDc3LCJleHAiOjE5NTM3NzkwNzd9.p44Bw-p2qoD9Oi8u0sxuzek4htX7G-9iVnyfNYZR7VI"
-        val apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjM4MjAzMDc3LCJleHAiOjE5NTM3NzkwNzd9.p44Bw-p2qoD9Oi8u0sxuzek4htX7G-9iVnyfNYZR7VI"
+        val token = ""
+        val apikey = ""
 
         var client: OkHttpClient = OkHttpClient.Builder().addInterceptor(Interceptor { chain ->
             val newRequest = chain.request().newBuilder()
