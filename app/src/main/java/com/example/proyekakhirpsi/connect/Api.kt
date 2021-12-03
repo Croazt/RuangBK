@@ -4,6 +4,7 @@ import com.example.proyekakhirpsi.models.ApiService
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 class Api {
@@ -19,8 +20,14 @@ class Api {
             chain.proceed(newRequest)
         }).build()
 
-        val retrofit = Retrofit.Builder().client(client).baseUrl("https://tyfwfpqltrmddstamjuv.supabase.co/rest/v1/").addConverterFactory(
-            GsonConverterFactory.create()).build()
+        val rxAdapter = RxJava3CallAdapterFactory.create()
+        val retrofit = Retrofit.Builder()
+            .client(client)
+            .baseUrl("https://tyfwfpqltrmddstamjuv.supabase.co/rest/v1/")
+            .addConverterFactory(
+            GsonConverterFactory.create())
+            .addCallAdapterFactory(rxAdapter)
+            .build()
 
         return retrofit
     }

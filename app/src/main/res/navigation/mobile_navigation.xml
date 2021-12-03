@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_logout"
-        android:name="com.example.proyekakhirpsi.ui.notifications.ProfilFragment"
+        android:name="com.example.proyekakhirpsi.ui.notifications.LogoutFragment"
         android:label="@string/title_logout"
         tools:layout="@layout/fragment_logout" />
 </navigation>

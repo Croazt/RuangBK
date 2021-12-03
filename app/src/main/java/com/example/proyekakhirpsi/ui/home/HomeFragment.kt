@@ -6,13 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.proyekakhirpsi.MainActivity
 import com.example.proyekakhirpsi.R
-import com.example.proyekakhirpsi.TambahJanji
+import com.example.proyekakhirpsi.RiwayatActivity
+import com.example.proyekakhirpsi.TambahJanjiActivity
 import com.example.proyekakhirpsi.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -37,7 +35,11 @@ class HomeFragment : Fragment() {
 
         val addJanji = root.findViewById<Button>(R.id.btntambahjanji)
         addJanji.setOnClickListener {
-            startActivity(Intent(context, TambahJanji::class.java ))
+            startActivity(Intent(context, TambahJanjiActivity::class.java ))
+        }
+        val riwayat = root.findViewById<Button>(R.id.btnriwayat)
+        riwayat.setOnClickListener {
+            startActivity(Intent(context, RiwayatActivity::class.java ))
         }
         return root
     }

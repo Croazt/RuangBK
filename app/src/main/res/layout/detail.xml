@@ -10,36 +10,40 @@
         android:id="@+id/arrowback"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/btnback"
         android:paddingLeft="10sp"
         android:textColor="#000"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cardView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.120"
+        app:layout_constraintHorizontal_bias="0.121"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.032"></Button>
+        app:layout_constraintVertical_bias="0.71000004"></Button>
 
     <TextView
         android:id="@+id/pageTitle2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="9dp"
         android:fontFamily="@font/montserrat"
         android:text="Detail Janji"
         android:textAllCaps="false"
         android:textColor="#506D84"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cardView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.035" />
+        app:layout_constraintVertical_bias="0.322" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
         android:layout_width="351dp"
-        android:layout_height="531dp"
+        android:layout_height="0dp"
         android:layout_row="0"
         android:layout_rowWeight="1"
         android:layout_column="0"
@@ -50,7 +54,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/arrowback">
 
         <TextView
             android:id="@+id/tvharidetail"

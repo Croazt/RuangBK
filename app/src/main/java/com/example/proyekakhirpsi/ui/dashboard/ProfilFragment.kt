@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.example.proyekakhirpsi.R
-import com.example.proyekakhirpsi.databinding.FragmentHomeBinding
+import com.example.proyekakhirpsi.config.StoreManager
 import com.example.proyekakhirpsi.databinding.FragmentProfilBinding
 
 class ProfilFragment : Fragment() {
@@ -36,6 +38,14 @@ class ProfilFragment : Fragment() {
         dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+
+        val storeManager = StoreManager(requireContext())
+        val imageView : ImageView = root.findViewById(R.id.imgprofil)
+        Glide.with(this)
+            .load(storeManager.image.toString())
+            .into(imageView)
+        val nama : TextView = root.findViewById(R.id.tvnamauser)
+        nama.text = storeManager.email.toString().split("@")[0]
         return root
     }
 

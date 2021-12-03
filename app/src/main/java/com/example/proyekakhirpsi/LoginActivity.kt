@@ -1,8 +1,9 @@
 package com.example.proyekakhirpsi
 
 
-import android.app.Activity;
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -15,25 +16,28 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.recyclerview.widget.RecyclerView
 import com.example.proyekakhirpsi.config.StoreManager
 import com.example.proyekakhirpsi.connect.Api
 import com.example.proyekakhirpsi.models.ApiService
 import com.example.proyekakhirpsi.models.UserList
 import com.google.android.material.snackbar.Snackbar
-import okhttp3.Interceptor
-import okhttp3.OkHttpClient
-import org.w3c.dom.Text
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class LoginActivity : AppCompatActivity() {
 
     private val emailLiveData = MutableLiveData<String>()
     private val passwordLiveData = MutableLiveData<String>()
+
+    lateinit var email : EditText
+    lateinit var pass : EditText
+
+    val PREF_NAME = "Shared"
+    val EMAIL_VAL = "Email"
+    val PASS_VAL = "Pass"
+    lateinit var sharedPreference : SharedPreferences
+
     private val isValidLiveData = MediatorLiveData<Boolean>().apply {
         this.value = false
         addSource(emailLiveData) { email ->
@@ -51,14 +55,17 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
 
-        val emailLayout = findViewById<EditText>(R.id.editTextTextEmailAddress)
-        val password = findViewById<EditText>(R.id.editTextTextPassword)
         val signInButton = findViewById<Button>(R.id.button)
 
-        emailLayout?.doOnTextChanged { text, _, _, _ ->
+        email = findViewById<EditText>(R.id.editTextTextEmailAddress)
+        pass = findViewById<EditText>(R.id.editTextTextPassword)
+
+        sharedPreference = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+
+        email?.doOnTextChanged { text, _, _, _ ->
             emailLiveData.value = text?.toString()
         }
-        password?.doOnTextChanged { text, _, _, _ ->
+        pass?.doOnTextChanged { text, _, _, _ ->
             passwordLiveData.value = text?.toString()
         }
 
@@ -79,16 +86,15 @@ class LoginActivity : AppCompatActivity() {
         signInButton.setOnClickListener(){
             val apiSet = Api().getRetrofit()
             val api = apiSet.create(ApiService::class.java)
-            Log.d("MEMEK", "onCreate: ")
             api.fetchUserLogin("*","eq."+emailLiveData.value+"","eq."+passwordLiveData.value+"").enqueue(object : Callback<List<UserList>> {
                 override fun onResponse(
                     call: Call<List<UserList>>,
                     response: Response<List<UserList>>
                 ) {
 //                    val storeManager = StoreManager(applicationContext);
-                    Log.d("fachry", "onResponse: $response ")
-                    if(response.code()!=200){
-                        val snackbar = Snackbar.make(findViewById<View>(android.R.id.content).getRootView(), "User Has Created",Snackbar.LENGTH_LONG).setAction("Action",null)
+                    Log.d("fachry", "body: ${response.body()}")
+                    if(response.code()!=200 || response.body()!!.isEmpty()){
+                        val snackbar = Snackbar.make(findViewById<View>(android.R.id.content).getRootView(), "User Not Found",Snackbar.LENGTH_LONG).setAction("Action",null)
                         snackbar.setActionTextColor(Color.BLUE)
                         val snackbarView = snackbar.view
                         snackbarView.setBackgroundColor(Color.LTGRAY)
@@ -99,7 +105,7 @@ class LoginActivity : AppCompatActivity() {
                         snackbar.show()
                     }else {
                         val storeManager = StoreManager(applicationContext);
-                        storeManager.setData(emailLiveData.value+"",passwordLiveData.value+"")
+                        storeManager.setData(emailLiveData.value+"",passwordLiveData.value+"", response.body()?.get(0)?.image+"")
                         Log.d("FACHRY", storeManager.email+"")
                         startActivity(Intent(applicationContext, MainActivity::class.java ))
                         this@LoginActivity.finish()
@@ -111,6 +117,27 @@ class LoginActivity : AppCompatActivity() {
                 }
             })
         }
+    }
+
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        val editor: SharedPreferences.Editor = sharedPreference.edit()
+        editor.putString(EMAIL_VAL, email.text.toString())
+        editor.putString(PASS_VAL, pass.text.toString())
+        editor.commit()
+        editor.apply()
+    }
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        sharedPreference = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+        super.onRestoreInstanceState(savedInstanceState)
+
+        val email1 = sharedPreference.getString(EMAIL_VAL, "")
+        val pass1 = sharedPreference.getString(PASS_VAL, "")
+
+        email.setText(email1.toString())
+        pass.setText(pass1.toString())
     }
 
     private fun validateForm(email: String?, password: String?): Boolean {

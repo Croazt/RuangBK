@@ -9,11 +9,13 @@ class StoreManager(private val _context: Context) {
     private val editor: SharedPreferences.Editor
     var pref: SharedPreferences
     private val PRIVATE_MODE = 0
-    fun setData(email :String, password : String) {
+    fun setData(email :String, password : String, image : String) {
         editor.putString("Email", email)
         Log.d("RuangBK", "email set")
         editor.putString("Password", password)
         Log.d("RuangBK", "password set")
+        editor.putString("image", image)
+        Log.d("RuangBK", "image set")
         editor.commit()
     }
 
@@ -22,6 +24,9 @@ class StoreManager(private val _context: Context) {
 
     val password: String?
         get() = pref.getString("Password", "")
+
+    val image: String?
+        get() = pref.getString("image", "")
 
     companion object {
         private const val PREF_NAME = "_store"
