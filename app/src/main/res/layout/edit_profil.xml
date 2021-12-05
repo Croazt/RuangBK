@@ -91,11 +91,10 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="180dp"
                 android:fontFamily="@font/montserrat"
-                android:text="Bulan, tanggal tahun"
+                android:inputType="date"
                 android:textAllCaps="false"
                 android:textColor="#506D84"
-                android:textSize="20sp"
-                android:inputType="date"/>
+                android:textSize="20sp" />
 
             <ImageView
                 android:id="@+id/ivgender"
@@ -124,7 +123,6 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="260dp"
                 android:fontFamily="@font/montserrat"
-                android:text="Female/Male"
                 android:textAllCaps="false"
                 android:textColor="#506D84"
                 android:textSize="20sp" />
@@ -156,7 +154,6 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="340dp"
                 android:fontFamily="@font/montserrat"
-                android:text="Jl Veteran, Malang"
                 android:textAllCaps="false"
                 android:textColor="#506D84"
                 android:textSize="20sp" />

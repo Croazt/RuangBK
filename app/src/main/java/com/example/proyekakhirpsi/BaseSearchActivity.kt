@@ -66,7 +66,6 @@ abstract class BaseSearchActivity : AppCompatActivity() {
             },{
 
             })
-
         )
     }
     protected fun fetchData(type:String, berjalan : String , query : String){

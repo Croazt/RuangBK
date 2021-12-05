@@ -17,10 +17,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class DetailRiwayatActivity : AppCompatActivity(){
-
-
-
-        override fun onCreate(savedInstanceState: Bundle?) {
+     override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
 
             val storeManager = StoreManager(this)
@@ -42,14 +39,26 @@ class DetailRiwayatActivity : AppCompatActivity(){
                 calendar2.time = date2
 
                 val kesimpulan = findViewById<TextView>(R.id.editTextTextMultiLine)
-                tvharidetail.text = calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.ENGLISH) + ", "+calendar.get(
-                    Calendar.DAY_OF_MONTH) + " "+calendar.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.ENGLISH) + " "+calendar.get(
-                    Calendar.YEAR)
-                tvjamdetail.text = calendar.get(Calendar.HOUR_OF_DAY).toString() + ":"+ calendar.get(
+                "${
+                    calendar.getDisplayName(
+                        Calendar.DAY_OF_WEEK,
+                        Calendar.LONG,
+                        Locale.ENGLISH
+                    )
+                }, ${
+                    calendar.get(
+                        Calendar.DAY_OF_MONTH
+                    )
+                } ${calendar.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.ENGLISH)} ${
+                    calendar.get(
+                        Calendar.YEAR
+                    )
+                }".also { tvharidetail.text = it }
+                (calendar.get(Calendar.HOUR_OF_DAY).toString() + ":"+ calendar.get(
                     Calendar.MINUTE) + " - " + calendar2.get(Calendar.HOUR_OF_DAY).toString() + ":"+ calendar2.get(
-                    Calendar.MINUTE)
+                    Calendar.MINUTE)).also { tvjamdetail.text = it }
                 tvgurudetail.text = item.guru
-                tvtopikdetail.text = "Topik : "+item.topik
+                ("Topik : "+item.topik).also { tvtopikdetail.text = it }
                 kesimpulan.text = item.kesimpulan
 
 

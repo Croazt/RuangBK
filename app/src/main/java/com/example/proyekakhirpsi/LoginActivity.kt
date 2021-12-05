@@ -31,8 +31,6 @@ class LoginActivity : AppCompatActivity() {
     private val emailLiveData = MutableLiveData<String>()
     private val passwordLiveData = MutableLiveData<String>()
 
-    lateinit var email : EditText
-    lateinit var pass : EditText
 
     val PREF_NAME = "Shared"
     val EMAIL_VAL = "Email"
@@ -119,11 +117,12 @@ class LoginActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
 
         val editor: SharedPreferences.Editor = sharedPreference.edit()
-        editor.putString(EMAIL_VAL, email.text.toString())
-        editor.putString(PASS_VAL, pass.text.toString())
+        editor.putString(EMAIL_VAL, editTextTextEmailAddress.text.toString())
+        editor.putString(PASS_VAL, editTextTextPassword.text.toString())
         editor.commit()
         editor.apply()
     }
+
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         sharedPreference = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
         super.onRestoreInstanceState(savedInstanceState)
@@ -131,8 +130,8 @@ class LoginActivity : AppCompatActivity() {
         val email1 = sharedPreference.getString(EMAIL_VAL, "")
         val pass1 = sharedPreference.getString(PASS_VAL, "")
 
-        email.setText(email1.toString())
-        pass.setText(pass1.toString())
+        editTextTextEmailAddress.setText(email1.toString())
+        editTextTextPassword.setText(pass1.toString())
     }
 
     private fun validateForm(email: String?, password: String?): Boolean {

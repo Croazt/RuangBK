@@ -31,11 +31,6 @@ class RegisterActivity : AppCompatActivity() {
     private val passwordLiveData = MutableLiveData<String>()
     private val passwordConfirmLiveData = MutableLiveData<String>()
 
-
-    lateinit var email : EditText
-    lateinit var pass : EditText
-    lateinit var conf : EditText
-
     val PREF_NAME = "Shared"
     val EMAIL_VAL = "Email"
     val PASS_VAL = "Pass"
@@ -132,9 +127,9 @@ class RegisterActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
 
         val editor: SharedPreferences.Editor = sharedPreference.edit()
-        editor.putString(EMAIL_VAL, email.text.toString())
-        editor.putString(PASS_VAL, pass.text.toString())
-        editor.putString(CONF_VAL, conf.text.toString())
+        editor.putString(EMAIL_VAL, editTextTextEmailAddress.text.toString())
+        editor.putString(PASS_VAL, editTextTextPassword.text.toString())
+        editor.putString(CONF_VAL, editTextTextPassword2.text.toString())
         editor.commit()
         editor.apply()
     }
@@ -146,9 +141,9 @@ class RegisterActivity : AppCompatActivity() {
         val pass1 = sharedPreference.getString(PASS_VAL, "")
         val conf1 = sharedPreference.getString(CONF_VAL, "")
 
-        email.setText(email1.toString())
-        pass.setText(pass1.toString())
-        conf.setText(conf1.toString())
+        editTextTextEmailAddress.setText(email1.toString())
+        editTextTextPassword.setText(pass1.toString())
+        editTextTextPassword2.setText(conf1.toString())
     }
     private fun validateForm(email: String?, password: String?, confirm: String?): Boolean {
         val isValidEmail = email != null && email.isNotBlank() && email.contains("@")

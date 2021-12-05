@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
             setupActionBarWithNavController(navController, appBarConfiguration)
             navView.setupWithNavController(navController)
 
-
         } else {
             Log.d("FACHRY", storeManager.email+"")
             startActivity(Intent(applicationContext, LoginActivity::class.java ))

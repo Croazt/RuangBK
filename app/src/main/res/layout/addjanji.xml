@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051"></Button>
+        app:layout_constraintVertical_bias="0.051" />
 
     <TextView
         android:id="@+id/pageTitle"
@@ -44,14 +44,14 @@
         android:layout_rowWeight="1"
         android:layout_column="0"
         android:layout_margin="8dp"
+        android:layout_marginTop="77dp"
         app:cardBackgroundColor="#C0D5E5"
         app:cardCornerRadius="10dp"
         app:cardElevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.634">
+        app:layout_constraintTop_toBottomOf="@+id/pageTitle">
 
         <TextView
             android:id="@+id/cardTitle"

@@ -100,9 +100,9 @@ class TambahJanjiActivity : AppCompatActivity() {
                             val mdIalog : Dialog = Dialog(this@TambahJanjiActivity)
                             val layout = R.layout.janjiberhasil
                             mdIalog.setContentView(layout)
-
+                            val butt = mdIalog.findViewById<Button>(R.id.button2)
                             mdIalog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-                            button2.setOnClickListener{
+                            butt.setOnClickListener{
                                 this@TambahJanjiActivity.finish()
                                 mdIalog.dismiss()
                             }

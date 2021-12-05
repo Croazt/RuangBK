@@ -5,13 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:fillViewport="true"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="#FFF4EC"
         android:elevation="8dp"
         tools:context=".ui.dashboard.ProfilFragment" >
@@ -24,15 +22,15 @@
             android:layout_rowWeight="1"
             android:layout_column="0"
             android:layout_margin="8dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="32dp"
             app:cardBackgroundColor="#C0D5E5"
             app:cardCornerRadius="10dp"
             app:cardElevation="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvprofil"
-            app:layout_constraintVertical_bias="0.58000004">
+            app:layout_constraintTop_toBottomOf="@+id/tvprofil">
 
             <ImageView
                 android:id="@+id/ivprofil"
@@ -93,7 +91,7 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="190dp"
                 android:fontFamily="@font/montserrat"
-                android:text="Bulan, tanggal tahun"
+                android:text="-"
                 android:textAllCaps="false"
                 android:textColor="#506D84"
                 android:textSize="20sp" />
@@ -125,7 +123,7 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="270dp"
                 android:fontFamily="@font/montserrat"
-                android:text="Female/Male"
+                android:text="-"
                 android:textAllCaps="false"
                 android:textColor="#506D84"
                 android:textSize="20sp" />
@@ -157,7 +155,7 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="350dp"
                 android:fontFamily="@font/montserrat"
-                android:text="Jl Veteran, Malang"
+                android:text="-"
                 android:textAllCaps="false"
                 android:textColor="#506D84"
                 android:textSize="20sp" />
@@ -182,22 +180,6 @@
 
         </androidx.cardview.widget.CardView>
 
-        <Button
-            android:id="@+id/arrowback"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="@drawable/btnback"
-            android:paddingLeft="10sp"
-            android:textColor="#000"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.120"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.032"
-            tools:ignore="SpeakableTextPresentCheck"></Button>
-
         <TextView
             android:id="@+id/tvprofil"
             android:layout_width="wrap_content"
@@ -207,18 +189,19 @@
             android:textAllCaps="false"
             android:textColor="#506D84"
             android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/cardView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.035" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="470dp"
             app:cardCornerRadius="65dp"
             app:cardElevation="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
