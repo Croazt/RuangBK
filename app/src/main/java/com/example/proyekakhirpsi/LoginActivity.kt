@@ -85,7 +85,6 @@ class LoginActivity : AppCompatActivity() {
                     response: Response<List<UserList>>
                 ) {
 //                    val storeManager = StoreManager(applicationContext);
-                    Log.d("fachry", "body: ${response.body()}")
                     if(response.code()!=200 || response.body()!!.isEmpty()){
                         val snackbar = Snackbar.make(findViewById<View>(android.R.id.content).rootView, "User Not Found",Snackbar.LENGTH_LONG).setAction("Action",null)
                         snackbar.setActionTextColor(Color.BLUE)

@@ -97,7 +97,6 @@ class RegisterActivity : AppCompatActivity() {
                     call: Call<Void>,
                     response: Response<Void>
                 ) {
-                    Log.d("fachry", "onResponse: $response ")
                     if(response.code()!=200 && response.code()!=201){
                         val snackbar = Snackbar.make(root, "User Has Created",Snackbar.LENGTH_LONG).setAction("Action",null)
                         snackbar.setActionTextColor(Color.BLUE)
@@ -112,7 +111,7 @@ class RegisterActivity : AppCompatActivity() {
                         val storeManager = StoreManager(applicationContext);
                         storeManager.setData(emailLiveData.value+"",passwordLiveData.value+ "","")
 
-                        startActivity(Intent(applicationContext, RegisterActivity::class.java ))
+                        startActivity(Intent(applicationContext, MainActivity::class.java ))
                         this@RegisterActivity.finish()
                     }
                 }

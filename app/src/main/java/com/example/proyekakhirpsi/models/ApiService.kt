@@ -25,5 +25,5 @@ interface ApiService {
 
     @FormUrlEncoded
     @POST("Janji")
-    fun createJanji(@Field("topik") topik : String, @Field("nama") nama : String, @Field("kelas") kelas : String): Call<Void>
+    fun createJanji(@Field("topik") topik : String, @Field("nama") nama : String, @Field("kelas") kelas : String, @Field("email") email : String): Call<Void>
 }

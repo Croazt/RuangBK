@@ -84,7 +84,7 @@ class TambahJanjiActivity : AppCompatActivity() {
             btndetail.setOnClickListener {
                 val apiSet = Api().getRetrofit()
                 val api = apiSet.create(ApiService::class.java)
-                api.createJanji(topicLiveData.value+"", namaLiveData.value+"", kelasLiveData.value+"").enqueue(object :
+                api.createJanji(topicLiveData.value+"", namaLiveData.value+"", kelasLiveData.value+"",storeManager.email+"").enqueue(object :
                     Callback<Void> {
                     override fun onResponse(
                         call: Call<Void>,

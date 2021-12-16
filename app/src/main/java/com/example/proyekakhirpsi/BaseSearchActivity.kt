@@ -56,13 +56,13 @@ abstract class BaseSearchActivity : AppCompatActivity() {
         compositeDisposable.add(apiCon.fetchJanji("*", "eq."+storeManager.email)
             .subscribeOn(Schedulers.io())
             .doOnError{
-                Log.e("Fachry", "Throwable " + it.message)
+                Log.e("RuangBK", "Throwable " + it.message)
             }
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 displayData(it)
             }, {
-                Log.e("Fachry", "Throwable " + it.message)
+                Log.e("RuangBK", "Throwable " + it.message)
             },{
 
             })
@@ -80,13 +80,13 @@ abstract class BaseSearchActivity : AppCompatActivity() {
         compositeDisposable.add(tes
             .subscribeOn(Schedulers.io())
             .doOnError{
-                Log.e("Fachry", "Throwable " + it.message)
+                Log.e("RuangBK", "Throwable " + it.message)
             }
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 displayData(it)
             }, {
-                Log.e("Fachry", "Throwable " + it.message)
+                Log.e("RuangBK", "Throwable " + it.message)
             },{
 
             })
